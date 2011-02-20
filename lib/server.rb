@@ -10,5 +10,15 @@ class Server < Sinatra::Base
     @users = User.all
     haml :index
   end
+
+  get '/set_active/:login' do
+    user = User.load params[:login]
+    user.update('active',1)
+  end
+
+  get '/show/:login' do
+    @user = User.load params[:login]
+    haml :user
+  end
   
 end

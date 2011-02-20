@@ -6,8 +6,11 @@
     %link{:type => "text/css", :href => "stylesheets/application.css", :rel => "stylesheet", :media => "screen"}
   %body
     - @users.each do |user|
-      %div{:id => user.login, :class => "user #{user.activated? ? 'active' : 'inactive' }"} 
-        %p
-          %img{:src => "/images/users/#{user.login}.jpg"}
-        %p
-          %span.name= user.name
+      %div{:id => user.login, :class => "content"} 
+        .user{:class => "#{user.activated? ? 'active' : 'inactive' }"} 
+          %p
+            %img{:src => "/images/users/#{user.login}.jpg"}
+          %p
+            %span.name= user.name
+:javascript
+  observer();  
