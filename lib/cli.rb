@@ -1,5 +1,18 @@
 module Cli
   extend self
   def execute(command)
+    unless command
+      puts "Usage: command [arg1, arg2, ...]"
+    end
+    case command
+    when 'start', 'stop'
+      simple_command(command)
+    end
   end
+
+  private
+  def simple_command(command)
+    REQ.post("/#{command}/#{LOGIN}",'')
+  end
+
 end
