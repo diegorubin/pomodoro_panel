@@ -3,6 +3,7 @@ CREATE TABLE users(
     name varchar[255],
     login varchar[255],
     active int default 0,
+    time varchar[12],
     primary key(login)
 );
 

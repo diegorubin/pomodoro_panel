@@ -1,5 +1,5 @@
 function observer(){
-    timer = setTimeout('observer()',20000);
+    timer = setTimeout('observer()',2000);
     $(".content").each(function(){
         var login = this.id;
         $.ajax({

@@ -1,7 +1,7 @@
 require 'sqlite3'
 
 class User
-  attr_accessor :id, :name, :login, :active
+  attr_accessor :id, :name, :login, :active, :time
 
   def initialize(args={})
     args.each {|key,value| send("#{key}=", value) }
