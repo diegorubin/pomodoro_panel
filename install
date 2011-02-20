@@ -1,0 +1,8 @@
+#!/bin/bash
+
+mkdir -p /opt/pomodoro/lib
+cp pomodoro-cli.rb /opt/pomodoro/
+cp lib/cli.rb /opt/pomodoro/lib/
+
+cp pomodoro-cli /usr/bin
+

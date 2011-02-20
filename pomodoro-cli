@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+system('cd /opt/pomodoro/')
+require 'pomodoro-cli'

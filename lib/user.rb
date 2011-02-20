@@ -29,7 +29,7 @@ class User
 
   def self.all
     @con = SQLite3::Database.new(DATABASE)
-    columns, *rows = @con.execute2 "SELECT * FROM users;"
+    columns, *rows = @con.execute2 "SELECT * FROM users ORDER BY name;"
     users = []
     rows.each do |row|
       attrs = {}
