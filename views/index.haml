@@ -11,6 +11,7 @@
           %p
             %img{:src => "/images/users/#{user.login}.jpg"}
           %p
-            %span.name= user.name
+            %span.name= user.login
+    %iframe{:src => "https://rpm.newrelic.com/accounts/3642/applications/117030"}
 :javascript
   observer();  

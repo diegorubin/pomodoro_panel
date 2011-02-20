@@ -2,7 +2,7 @@
   %p
     %img{:src => "/images/users/#{@user.login}.jpg"}
   %p
-    %span.name= @user.name
+    %span.name= @user.login
   - if @user.activated?
     %p
       %span.time= "Faltam #{@left}"

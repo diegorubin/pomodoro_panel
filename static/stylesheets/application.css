@@ -1,4 +1,6 @@
-.user{ float:left; margin: 2px; text-align: center;}
+iframe{ width: 100%; height: 100%; }
+
+.user{ float:left; margin: 2px; text-align: center; height: 252px; }
 .name{ font-weight: bold; }
 
 .active{ border: 2px solid green; }

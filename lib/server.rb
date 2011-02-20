@@ -33,7 +33,7 @@ class Server < Sinatra::Base
       result = Time.now - date
       left = 25*60 - result.to_i
       @left = "#{left/60}:#{left%60}"
-      if result < 0
+      if left < 0
         @user.update('active',0)
       end
     end
