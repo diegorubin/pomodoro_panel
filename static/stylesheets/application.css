@@ -1,0 +1,5 @@
+.user{ float:left; margin: 2px; text-align: center;}
+.name{ font-weight: bold; }
+
+.active{ border: 2px solid green; }
+.inactive{ border: 2px solid red; }

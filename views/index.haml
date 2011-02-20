@@ -1,5 +1,13 @@
 %html
   %meta
     %title Pomodoro Panel
+    %script{:type => "text/javascript", :src => "javascripts/jquery.js"}
+    %script{:type => "text/javascript", :src => "javascripts/application.js"}
+    %link{:type => "text/css", :href => "stylesheets/application.css", :rel => "stylesheet", :media => "screen"}
   %body
-    = @message
+    - @users.each do |user|
+      %div{:id => user.login, :class => "user #{user.activated? ? 'active' : 'inactive' }"} 
+        %p
+          %img{:src => "/images/users/#{user.login}.jpg"}
+        %p
+          %span.name= user.name

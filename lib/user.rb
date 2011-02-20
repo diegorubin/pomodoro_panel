@@ -1,10 +1,14 @@
 require 'sqlite3'
 
 class User
-  attr_accessor :id, :name, :login
+  attr_accessor :id, :name, :login, :active
 
   def initialize(args={})
     args.each {|key,value| send("#{key}=", value) }
+  end
+
+  def activated?
+    active == 1
   end
   
   def update(attr,value)
