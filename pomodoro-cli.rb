@@ -1,6 +1,6 @@
 require 'yaml'
-require 'lib/cli'
 require 'net/http'
+require File.join(File.dirname(File.expand_path(__FILE__)), 'lib','cli')
 
 url = "localhost"
 port = "4567"
