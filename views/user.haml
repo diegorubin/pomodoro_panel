@@ -1,9 +1,9 @@
 .user{:class => "#{@user.activated? ? 'active' : 'inactive' }"} 
   %p
-    %img{:src => "/images/users/#{@user.login}.jpg"}
+    %img{:src => "/images/users/#{@user.login}.jpg", :width => 90}
   %p
     %span.name= @user.login
   - if @user.activated?
     %p
-      %span.time= "Faltam #{@left}"
+      %span.time= "#{@left}"
 

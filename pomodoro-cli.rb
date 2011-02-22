@@ -3,7 +3,7 @@ require 'net/http'
 require File.join(File.dirname(File.expand_path(__FILE__)), 'lib','cli')
 
 url = "localhost"
-port = "4567"
+port = 4567
 
 config_file = File.join(ENV["HOME"],'.pomodoro.yml')
 if File.exists?(config_file)
@@ -13,14 +13,11 @@ if File.exists?(config_file)
   LOGIN = config['login'] if config['login']
 end
 
-URL = url
-PORT = port
-
 unless defined? LOGIN
   puts "Login não informado."
   puts "O arquivo #{ENV["HOME"]}/.pomodoro.yml precisa ser criado."
 end
 
-REQ = Net::HTTP.new(URL,PORT)
+REQ = Net::HTTP.new(url,port.to_i)
 
 Cli.execute(ARGV[0])
