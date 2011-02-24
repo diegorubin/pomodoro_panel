@@ -1,0 +1,10 @@
+%ul
+  - @users.each do |user|
+    %li
+      %span.login{:style => user.left_time > 0 ? 'color: red;' : 'color: green;'}
+        = user.login
+            
+      %span.time_left
+        = ":"
+        = user.left_time.left_time_in_minutes
+

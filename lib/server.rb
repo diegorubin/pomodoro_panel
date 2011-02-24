@@ -3,6 +3,7 @@ require 'haml'
 require 'time'
 
 require File.join(File.dirname(__FILE__),'user')
+require File.join(File.dirname(__FILE__),'ruby_extensions')
 
 class Server < Sinatra::Base
   set :views, File.dirname(__FILE__) + '/../views'
@@ -25,14 +26,17 @@ class Server < Sinatra::Base
     user.update('active',0)
   end
 
+  get '/statuses' do
+    @users = User.all
+    haml :statuses
+  end
+
   get '/show/:login' do
     @user = User.load params[:login]
 
     if @user.activated?
-      date = Time.parse @user.time
-      result = Time.now - date
-      left = 25*60 - result.to_i
-      @left = "#{left/60}:#{left%60}"
+      left = @user.left_time
+      @left = left.pretty_left_time
       if left < 0
         @user.update('active',0)
       end
@@ -41,5 +45,5 @@ class Server < Sinatra::Base
 
     haml :user
   end
-  
+ 
 end

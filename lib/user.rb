@@ -39,6 +39,16 @@ class User
     users
   end
 
+  def left_time
+    if !self.time.is_a? NilClass
+      date = Time.parse self.time
+      result = Time.now - date
+      (25*60 - result.to_i).to_i
+    else
+      0
+    end
+  end
+
   private
   def connect
     @con = SQLite3::Database.new(DATABASE)

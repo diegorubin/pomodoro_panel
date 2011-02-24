@@ -7,6 +7,8 @@ module Cli
     case command
     when 'start', 'stop'
       simple_command(command)
+    when 'statuses'
+      simple_anonymous_command(command)
     end
   end
 
@@ -15,4 +17,7 @@ module Cli
     REQ.post("/#{command}/#{LOGIN}",'')
   end
 
+  def simple_anonymous_command(command)
+    REQ.post("/#{command}",'')
+  end
 end
