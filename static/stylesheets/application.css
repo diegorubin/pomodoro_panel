@@ -1,7 +1,11 @@
 iframe{ width: 100%; height: 100%; }
 
 .user{ float:left; margin: 2px; text-align: center; height: 200px; width: 105px; }
-.name{ font-weight: bold; }
+.name{ font-weight: bold; font-family: arial, helvetica, serif; }
 
-.active{ border: 2px solid green; }
-.inactive{ border: 2px solid red; }
+.active{ border: 2px solid red; background-color: red; }
+.inactive{ border: 2px solid green;background-color: green; }
+
+.logo{float: left;}
+.content{ display: inline;}
+.time{ font-weight: bold; font-size: 40px; font-family: arial, helvetica, serif; color:black; }

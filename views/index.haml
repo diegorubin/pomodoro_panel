@@ -5,13 +5,16 @@
     %script{:type => "text/javascript", :src => "javascripts/application.js"}
     %link{:type => "text/css", :href => "stylesheets/application.css", :rel => "stylesheet", :media => "screen"}
   %body
-    - @users.each do |user|
-      %div{:id => user.login, :class => "content"} 
-        .user{:class => "#{user.activated? ? 'active' : 'inactive' }"} 
-          %p
-            %img{:src => "/images/users/#{user.login}.jpg"}
-          %p
-            %span.name= user.login
+    .panel
+      .logo
+        %img{:src => "/images/site/pomodoro-timer.png"}
+      - @users.each do |user|
+        %div{:id => user.login, :class => "content"} 
+          .user{:class => "#{user.activated? ? 'active' : 'inactive' }"} 
+            %p
+              %img{:src => "/images/users/#{user.login}.jpg"}
+            %p
+              %span.name= user.login
     %iframe{:src => "https://rpm.newrelic.com/accounts/3642/applications/117030"}
 :javascript
   observer();  

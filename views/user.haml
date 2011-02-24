@@ -5,5 +5,8 @@
     %span.name= @user.login
   - if @user.activated?
     %p
-      %span.time= "#{@left}"
-
+      - minutes = @left.split(':').first.to_i
+      - if minutes < 5
+        %span.time= "#{minutes}"
+      - else
+        %span.time.almost= "#{minutes}"

@@ -4,5 +4,5 @@ sudo mkdir -p /opt/pomodoro/lib
 sudo cp pomodoro-cli.rb /opt/pomodoro/ 
 sudo cp lib/cli.rb /opt/pomodoro/lib/ 
 sudo cp pomodoro-cli /usr/bin
-cp pomodoro.yml ~/
+cp pomodoro.yml ~/.pomodoro.yml
 
