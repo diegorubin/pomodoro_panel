@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'haml'
 require 'time'
+require 'json'
 
 require File.join(File.dirname(__FILE__),'user')
 require File.join(File.dirname(__FILE__),'ruby_extensions')
@@ -45,5 +46,17 @@ class Server < Sinatra::Base
 
     haml :user
   end
- 
+  
+  get '/users.json' do
+    users = User.all
+    users = users.collect {|x| {:login=>x.login, :name=>x.name, :active=>x.active, :left_time=>x.left_time} }
+    content_type :json
+    users.to_json
+  end
+
+  get '/:login/json' do
+    user = User.load params[:login]
+    content_type :json
+    {:login=>user.login, :name=>user.name, :active=>user.active, :left_time=>user.left_time}.to_json
+  end
 end
