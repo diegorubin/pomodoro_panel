@@ -7,7 +7,7 @@
   %body
     .panel
       .logo
-        %img{:src => "/images/site/pomodoro-timer.png"}
+        %img{:src => "/images/site/casinha.png", :height => 200}
       - @users.each do |user|
         %div{:id => user.login, :class => "content"} 
           .user{:class => "#{user.activated? ? 'active' : 'inactive' }"} 

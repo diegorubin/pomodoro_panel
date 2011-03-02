@@ -3,6 +3,7 @@ GEM
   remote: http://gems.github.com/
   specs:
     haml (3.0.25)
+    json (1.5.1)
     rack (1.2.1)
     sinatra (1.1.2)
       rack (~> 1.1)
@@ -15,5 +16,6 @@ PLATFORMS
 
 DEPENDENCIES
   haml
+  json
   sinatra
   sqlite3
