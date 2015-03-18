@@ -5,4 +5,5 @@ gem 'haml'
 gem 'sqlite3'
 gem 'json'
 gem 'capistrano'
+gem 'passenger'
 
