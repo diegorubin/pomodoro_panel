@@ -1,7 +1,8 @@
-source :gemcutter
-source 'http://gems.github.com'
+source 'https://rubygems.org'
 
 gem 'sinatra'
 gem 'haml'
 gem 'sqlite3'
 gem 'json'
+gem 'capistrano'
+
